@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Create a new record | {{ parent() }}{% endblock %}
+
+{% block body %}
+
+    <main class="homepage__main">
+        <h1>{{ title }}</h1>
+
+        <div class="songs-container">
+            <h2>{{ tracks|length }} songs</h2>
+            <ul>
+                {% for track in tracks %}
+                    <div class="song" {{ stimulus_controller('song-controls', {
+                        infoUrl: path('api_songs_get_one', { id: loop.index })
+                    }) }}>
+                        <a href="#" {{ stimulus_action('song-controls', 'play') }}><img src="{{ asset('img/play.png') }}" alt="Play"></a>
+                        <span class="song_text">{{ track.song }} - {{ track.artist }}</span>
+                        <a href="#"><img src="{{ asset('img/burger.png') }}" alt="Burger" class="burger"></a>
+                        <a href="#"><img src="{{ asset('img/delete.png') }}" alt="Delete"></a>
+                    </div>
+                {% endfor %}
+            </ul>
+        </div>
+    </main>
+
+{% endblock %}

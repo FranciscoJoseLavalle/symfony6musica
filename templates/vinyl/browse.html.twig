@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <main class="main__browse">
+        <div>
+            <h1>Browse {{ genre ? genre : 'All genres' }}</h1>
+            <h2>Filter by genre</h2>
+            <ul>
+                <li>
+                    <a href="{{ path('app_browse', {
+                        slug: 'pop'
+                    }) }}">Pop</a>
+                </li>
+                <li>
+                    <a href="{{ path('app_browse', {
+                        slug: 'rock'
+                    }) }}">Rock</a>
+                </li>
+                <li>
+                    <a href="{{ path('app_browse', {
+                        slug: 'heavy-metal'
+                    }) }}">Heavy Metal</a>
+                </li>
+            </ul>
+
+            <ul>
+
+            </ul>
+        </div>
+    </main>
+{% endblock %}
