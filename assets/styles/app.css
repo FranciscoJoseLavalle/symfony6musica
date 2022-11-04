@@ -75,7 +75,7 @@ a img {
     gap: .75rem;
 }
 
-.main__browse ul li {
+.main__browse ul li a {
     padding: .5rem;
     background-color: #775;
     border-radius: .3rem;
