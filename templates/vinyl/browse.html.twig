@@ -2,10 +2,10 @@
 
 {% block body %}
     <main class="main__browse">
-        <div>
+        <div class="filters">
             <h1>Browse {{ genre ? genre : 'All genres' }}</h1>
             <h2>Filter by genre</h2>
-            <ul>
+            <ul class="filters_list">
                 <li>
                     <a href="{{ path('app_browse', {
                         slug: 'pop'
@@ -22,10 +22,17 @@
                     }) }}">Heavy Metal</a>
                 </li>
             </ul>
-
-            <ul>
-
-            </ul>
         </div>
+        <section class="mixes_container">
+            {% for mix in mixes %}
+                <div>
+                    <img src="{{ asset('img/300.png') }}" alt="Imagen del mix">
+                    <p>{{ mix.title }}</p>
+                    <span>{{ mix.trackCount }}</span>
+                    <span>{{ mix.genre }}</span>
+                    <span>{{ mix.createdAt|ago }}</span>
+                </div>
+            {% endfor %}
+        </section>
     </main>
 {% endblock %}

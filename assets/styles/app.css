@@ -65,18 +65,38 @@ a img {
     width: 1.5rem;
 }
 
-.main__browse div {
+.main__browse {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.main__browse .filters {
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
-.main__browse ul {
+.filters_list {
     display: flex;
     gap: .75rem;
 }
 
-.main__browse ul li a {
+.filters_list li a {
     padding: .5rem;
     background-color: #775;
     border-radius: .3rem;
+}
+
+.mixes_container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.mixes_container div{
+    background-color: #27404f;
+    padding: 1rem;
+    border-radius: .3rem;
+    text-align: center;
+}
+.mixes_container img {
+    width: 10rem;
 }
