@@ -12,8 +12,9 @@
 <body>
 <header>
     <nav>
-        <a href="{{ path('app_homepage') }}" class="home_link">Mixed Vinyl</a>
-        <a href="{{ path('app_browse') }}">Browse</a>
+        <a href="{{ path('app_album_index') }}" class="home_link">Mixed Vinyl</a>
+        {# <a href="{{ path('app_browse') }}">Browse</a> #}
+        <a href="{{ path('app_album_new') }}">Agregar álbum</a>
     </nav>
 </header>
 {% block body %}{% endblock %}

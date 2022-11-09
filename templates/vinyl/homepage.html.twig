@@ -5,19 +5,19 @@
 {% block body %}
 
     <main class="homepage__main">
-        <h1>{{ title }}</h1>
+        <h1>Albumes</h1>
 
         <div class="songs-container">
-            <h2>{{ tracks|length }} songs</h2>
+            <h2>{{ albums|length }} albumes</h2>
             <ul>
-                {% for track in tracks %}
+                {% for album in albums %}
                     <div class="song" {{ stimulus_controller('song-controls', {
-                        infoUrl: path('api_songs_get_one', { id: loop.index })
+                        infoUrl: path('api_songs_get_one', { id: album.id })
                     }) }}>
                         <a href="#" {{ stimulus_action('song-controls', 'play') }}><img src="{{ asset('img/play.png') }}" alt="Play"></a>
-                        <span class="song_text">{{ track.song }} - {{ track.artist }}</span>
+                        <span class="song_text">{{ album.nombre }} - {{ album.cantidadCanciones }}</span>
                         <a href="#"><img src="{{ asset('img/burger.png') }}" alt="Burger" class="burger"></a>
-                        <a href="#"><img src="{{ asset('img/delete.png') }}" alt="Delete"></a>
+                        <a href="#"></a>{{ include('album/_delete_form.html.twig') }}
                     </div>
                 {% endfor %}
             </ul>

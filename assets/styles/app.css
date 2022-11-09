@@ -5,7 +5,12 @@
     text-decoration: none;
     text-decoration: none;
     list-style: none;
-    font-family: "Open Sans";
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #152b3b;
+    color: #ddd;
 }
 
 header {
@@ -29,9 +34,7 @@ a {
 }
 
 .homepage__main, .main__browse {
-    background-color: #152b3b;
     padding: 5rem;
-    color: #ddd;
 }
 h1 {
     font-size: 2.5rem;
@@ -99,4 +102,35 @@ a img {
 }
 .mixes_container img {
     width: 10rem;
+}
+.btn {
+    background-color: transparent;
+}
+
+.form_new {
+    padding: 2rem;
+}
+#album {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-bottom: 1rem;;
+}
+#album div{
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+}
+#album input, .form_new button, #album select{
+    padding: .35rem;
+    background-color: #cc9;
+    border: none;
+    border-radius: .3rem;
+    outline: none;
+}
+.form_new button {
+    /* background-color: #94a6b2; */
+    background-color: #27404f;
+    color: #fff;
+    padding: .5rem;
 }
