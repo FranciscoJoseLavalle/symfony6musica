@@ -62,7 +62,7 @@ h1 {
     border-radius: .3rem;
 }
 a img {
-    width: 1rem;
+    width: 1.2rem;
 }
 .burger {
     width: 1.5rem;
@@ -105,9 +105,16 @@ a img {
 }
 .btn {
     background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn img {
+    width: 1.2rem;
 }
 
-.form_new {
+.form_new, .form_edit {
     padding: 2rem;
 }
 #album {
@@ -121,16 +128,16 @@ a img {
     flex-direction: column;
     gap: .25rem;
 }
-#album input, .form_new button, #album select{
+#album input, .form_new .btn, .form_edit .btn, #album select{
     padding: .35rem;
     background-color: #cc9;
     border: none;
     border-radius: .3rem;
     outline: none;
 }
-.form_new button {
-    /* background-color: #94a6b2; */
-    background-color: #27404f;
-    color: #fff;
+.form_edit .btn, .form_new .btn {
+    background-color: #94a6b2;
+    /* background-color: #27404f; */
+    color: #000;
     padding: .5rem;
 }

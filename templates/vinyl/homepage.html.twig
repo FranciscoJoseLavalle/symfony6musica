@@ -1,27 +1,31 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Create a new record | {{ parent() }}{% endblock %}
+{% block title %}Create a new record |
+	{{ parent() }}
+{% endblock %}
 
 {% block body %}
 
-    <main class="homepage__main">
-        <h1>Albumes</h1>
+	<main class="homepage__main">
+		<h1>Albumes</h1>
 
-        <div class="songs-container">
-            <h2>{{ albums|length }} albumes</h2>
-            <ul>
-                {% for album in albums %}
-                    <div class="song" {{ stimulus_controller('song-controls', {
-                        infoUrl: path('api_songs_get_one', { id: album.id })
-                    }) }}>
-                        <a href="#" {{ stimulus_action('song-controls', 'play') }}><img src="{{ asset('img/play.png') }}" alt="Play"></a>
-                        <span class="song_text">{{ album.nombre }} - {{ album.cantidadCanciones }}</span>
-                        <a href="#"><img src="{{ asset('img/burger.png') }}" alt="Burger" class="burger"></a>
-                        <a href="#"></a>{{ include('album/_delete_form.html.twig') }}
-                    </div>
-                {% endfor %}
-            </ul>
-        </div>
-    </main>
+		<div class="songs-container">
+			<h2>{{ albums|length }}
+				albumes</h2>
+			<ul>
+				{% for album in albums %}
+					<div class="song" {{ stimulus_controller('song-controls', { infoUrl: path('api_songs_get_one', { id: album.id } ) }) }}>
+						<a href="#" {{ stimulus_action('song-controls', 'play') }}><img src="{{ asset('img/play.png') }}" alt="Play"></a>
+						<span class="song_text">{{ album.nombre }}
+							-
+							{{ album.cantidadCanciones }}</span>
+						<a href="#"><img src="{{ asset('img/burger.png') }}" alt="Burger" class="burger"></a>
+						<a href="{{ path('app_album_edit', {'id': album.id}) }}"><img src="{{ asset('img/edit.png') }}"></a>
+						{{ include('album/_delete_form.html.twig') }}
+					</div>
+				{% endfor %}
+			</ul>
+		</div>
+	</main>
 
 {% endblock %}

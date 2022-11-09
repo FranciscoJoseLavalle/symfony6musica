@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Canciones{% endblock %}
+
+{% block body %}
+    <h1>Canciones</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ cancione.id }}</td>
+            </tr>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ cancione.nombre }}</td>
+            </tr>
+            <tr>
+                <th>Duracion</th>
+                <td>{{ cancione.duracion }}</td>
+            </tr>
+            <tr>
+                <th>Artista</th>
+                <td>{{ cancione.artista }}</td>
+            </tr>
+            <tr>
+                <th>FechaPublicacion</th>
+                <td>{{ cancione.fechaPublicacion ? cancione.fechaPublicacion|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Album</th>
+                <td>{{ cancione.album }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_canciones_index') }}">back to list</a>
+
+    <a href="{{ path('app_canciones_edit', {'id': cancione.id}) }}">edit</a>
+
+    {{ include('canciones/_delete_form.html.twig') }}
+{% endblock %}
